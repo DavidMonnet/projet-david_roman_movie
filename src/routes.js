@@ -24,4 +24,4 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       template: '<poster></poster>'
     });
 }
-}
+
