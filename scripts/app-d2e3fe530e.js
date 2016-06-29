@@ -1,0 +1,2 @@
+function routesConfig(e,o,t){t.html5Mode(!0).hashPrefix("!"),o.otherwise("/"),e.state("app",{url:"/",template:"<app></app>"})}routesConfig.$inject=["$stateProvider","$urlRouterProvider","$locationProvider"],angular.module("app",["ui.router"]),angular.module("app").component("app",{templateUrl:"app/hello.html"}),angular.module("app").run(["$templateCache",function(e){e.put("app/hello.html","<h1>test World!</h1>\r\n")}]),angular.module("app").config(routesConfig);
+//# sourceMappingURL=../maps/scripts/app-d2e3fe530e.js.map
