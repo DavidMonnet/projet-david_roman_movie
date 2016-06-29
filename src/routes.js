@@ -9,7 +9,19 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('app', {
-      url: '/',
       template: '<app></app>'
+    })
+    .state('app.list', {
+      url: '/',
+      template: '<list></list>'
+    })
+    .state('app.movie', {
+      url: '/movie/:movieId',
+      template: '<movie></movie>'
+    })
+    .state('app.poster', {
+      url: '/poster',
+      template: '<poster></poster>'
     });
+}
 }
