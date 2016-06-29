@@ -1,11 +1,24 @@
-function listController() {
-  this.text = 'My brand new component!';
-}
-
 angular
   .module('app')
   .component('list', {
     templateUrl: 'app/component/list.html',
-    controller: listController
-  });
+    controller: function (Save, $http) {
+      var $ctrl = this;
+      $http.get('http://amc.ig.he-arc.ch:3003/movie/popular?language=fr')
+      .then(function (result) {
+        $ctrl.movies = result.data.results;
+      });
 
+      $ctrl.maListe = [];
+      $ctrl.maListe = Save.importSaved();
+      $ctrl.maVariable = 'Film à voir';
+      $ctrl.ajouterAListe = function () {
+        $ctrl.maListe.push($ctrl.maVariable);
+        Save.save($ctrl.maListe);
+      };
+      $ctrl.supprimerdeListe = function (el) {
+        $ctrl.maListe.splice($ctrl.maListe.indexOf(el), 1);
+        Save.save($ctrl.maListe);
+      };
+    }
+  });

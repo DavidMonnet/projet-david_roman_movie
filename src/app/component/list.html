@@ -1,3 +1,27 @@
-<div class="component">
-  <h2>{{$ctrl.text}}</h2>
+<div class="row jumbotron form-group">
+  <div class="col-xs-12 col-sm-3">
+    <label for="input">Ajouter un film</label>
+  </div>
+  <div class="col-xs-12 col-sm-7">
+    <input type "text" ng-model="$ctrl.maVariable" class="form-control" id="input" placeholder="du contenu" />
+  </div>
+  <div class="col-xs-12 col-sm-2">
+    <button ng-click="$ctrl.ajouterAListe()" class="btn btn-primary">Ajouter</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    
+    <ul>
+      <li ng-repeat="el in $ctrl.maListe track by $index"> <a ui-sref="app.movie({movieId:el})">{{el | capitalize}}</a>
+        <span ng-click="$ctrl.supprimerdeListe(el)" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      </li>
+    </ul>
+    <ul> 
+      <li ng-repeat="el in $ctrl.movies track by $index">
+         <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
+        <poster movie="{poster_path: el.poster_path}"></poster></li>
+    </ul>
+  </div>
 </div>
