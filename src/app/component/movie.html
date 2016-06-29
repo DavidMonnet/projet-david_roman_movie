@@ -1,3 +1,5 @@
-<div class="component">
-  <h2>{{$ctrl.text}}</h2>
+<div class="container component" style="background:url(http://image.tmdb.org/t/p/w1000/{{$ctrl.movie.backdrop_path}}) no-repeat;background-size: cover;">
+  <h2>{{$ctrl.movie.title}} <br />
+    <poster movie="$ctrl.movie"></poster>
+  </h2>
 </div>

@@ -3,7 +3,7 @@
     <label for="input">Ajouter un film</label>
   </div>
   <div class="col-xs-12 col-sm-7">
-    <input type="text" ng-model="$ctrl.maVariable" class="form-control" id="input" placeholder="du contenu" />
+    <input type "text" ng-model="$ctrl.maVariable" class="form-control" id="input" placeholder="du contenu" />
   </div>
   <div class="col-xs-12 col-sm-2">
     <button ng-click="$ctrl.ajouterAListe()" class="btn btn-primary">Ajouter</button>
@@ -11,8 +11,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
-    
+  <div class="col-md-6">   
     <ul>
       <li ng-repeat="el in $ctrl.maListe track by $index"> <a ui-sref="app.movie({movieId:el})">{{el | capitalize}}</a>
         <span ng-click="$ctrl.supprimerdeListe(el)" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -21,7 +20,7 @@
     <ul> 
       <li ng-repeat="el in $ctrl.movies track by $index">
          <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
-        <poster movie="{poster_path: el.poster_path}"></poster></li>
+        <poster movie="{poster_path: el.poster_path}"></poster></a></li>
     </ul>
   </div>
 </div>
