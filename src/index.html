@@ -1,7 +1,12 @@
 <!doctype html>
 <html>
   <head>
+    <!-- @ifdef DIST -->
+    <base href="/projet-david_roman_movie/">
+    <!-- @endif -->
+    <!-- @ifndef DIST -->
     <base href="/">
+    <!-- @endif -->
     <meta charset="utf-8">
     <title>FountainJS</title>
     <meta name="description" content="">

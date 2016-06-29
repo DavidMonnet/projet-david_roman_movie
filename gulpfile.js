@@ -38,11 +38,16 @@ function watch(done) {
   done();
 }
 
-var deploy = require('gulp-deploy-git');
-gulp.task('deploy', function() {
-	return gulp.src('**/*',  { read: false, cwd: 'dist'  })
-	.pipe(deploy({
-		repository: 'git@github.com:heg-web/projet-david_roman_movie.git',
-		remoteBranch:   'gh-pages'
-	}))
+gulp.task('set-dist', function (done) {
+  process.env.DIST = true;
+  done();
 });
+
+var deploy = require('gulp-deploy-git');
+gulp.task('deploy', gulp.series('set-dist', 'default', function () {
+  return gulp.src('**/*', {read: false, cwd: 'dist'})
+    .pipe(deploy({
+      repository: 'git@github.com:heg-web/projet-david_roman_movie.git',
+      remoteBranch: 'gh-pages'
+    }));
+}));
