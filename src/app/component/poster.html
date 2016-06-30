@@ -1,3 +1,7 @@
 <div class="poster">
-      <a ui-sref="app.movie({movieId: $ctrl.movie.id})"> <img  ng-src="http://image.tmdb.org/t/p/w185/{{$ctrl.movie.poster_path}}" alt="Description" /></a>
+      <a ui-sref="app.movie({movieId: $ctrl.movie.id})"> 
+            <img ng-if = "$ctrl.movie.poster_path" ng-src="http://image.tmdb.org/t/p/w185/{{$ctrl.movie.poster_path}}" alt="Description" />
+            <img ng-if != "$ctrl.movie.poster_path" ng-src="http://loremflickr.com/185/252/cars" alt="img"/>
+      </a>
 </div>
+<!-- onerror="this.src='http://loremflickr.com/185/252/cars'"-->
