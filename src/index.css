@@ -12,6 +12,10 @@ body {
   border-color: transparent;
 }
 
+ul{
+  list-style: none;
+}
+
 .btn-icon:focus{
   box-shadow:none;
   border-color: transparent;
@@ -21,7 +25,3 @@ body {
   color: red;
   background-position: right;
 }
-
- #searchTextResult{
-   list-style: none;
-  }

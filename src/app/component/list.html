@@ -7,26 +7,24 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
-      <div ng-init="$ctrl.movies"></div>
-      <ul>
-        <li id="searchTextResult" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
-          <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
+    <div ng-init="$ctrl.movies"></div>
+    <ul>
+      <li class="col-xs-12 col-sm-4 col-md-3" style="height:350px;" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
+        <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
             <poster movie="el"></poster>
           </a>
-          <button ng-click="$ctrl.ajouterAListe(el)" class="btn btn-icon">
+        <button ng-click="$ctrl.ajouterAListe(el)" class="btn btn-icon">
             <span class="glyphicon glyphicon-heart" ng-class="{active: item.favorite}"></span>
           </button>
-        </li>
-      </ul>
-      <br />
-      <slick dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-        <div id="searchTextResult" ng-repeat="el in $ctrl.movies ">
-          <a ui-sref="app.movie({movieId:el.id})">
-            <poster movie="el"></poster>
-          </a>
-        </div>
-      </slick>
+      </li>
+    </ul>
+    <br />
+    <slick class="col-xs-12" dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+      <div class="searchTextResult" ng-repeat="el in $ctrl.movies ">
+        <a ui-sref="app.movie({movieId:el.id})">
+          <poster movie="el"></poster>
+        </a>
       </div>
-    </div>
+    </slick>
   </div>
+</div>

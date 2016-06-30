@@ -22,6 +22,14 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('app.poster', {
       url: '/poster',
       template: '<poster></poster>'
+    })
+    .state('app.favourites', {
+      url: '/favourites',
+      template: '<favourites></favourites>'
+    })
+    .state('app.about', {
+      url: '/about',
+      template: '<about></about>'
     });
 }
 
