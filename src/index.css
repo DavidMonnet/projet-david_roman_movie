@@ -2,6 +2,26 @@ body {
   background-color: lightgrey;
 }
 
+.btn-icon{
+  margin-left:143px;
+  margin-top:-60px;
+}
+
+.btn-icon:hover{
+  box-shadow:none;
+  border-color: transparent;
+}
+
+.btn-icon:focus{
+  box-shadow:none;
+  border-color: transparent;
+}
+
 .glyphicon-heart {
-    color: red;
+  color: red;
+  background-position: right;
+}
+
+ #searchTextResult{
+   list-style: none;
   }

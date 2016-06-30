@@ -7,28 +7,26 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div ng-init="$ctrl.movies"></div>
       <ul>
         <li id="searchTextResult" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
           <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
-        <poster movie="el"></poster></a>
+            <poster movie="el"></poster>
+          </a>
           <button ng-click="$ctrl.ajouterAListe(el)" class="btn btn-icon">
             <span class="glyphicon glyphicon-heart" ng-class="{active: item.favorite}"></span>
           </button>
         </li>
       </ul>
+      <br />
+      <slick dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+        <div id="searchTextResult" ng-repeat="el in $ctrl.movies ">
+          <a ui-sref="app.movie({movieId:el.id})">
+            <poster movie="el"></poster>
+          </a>
+        </div>
+      </slick>
+      </div>
     </div>
-
-
-
-    <slick dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-      <ul>
-        <li id="searchTextResult" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
-          <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
-        <poster movie="el"></poster></a>
-        </li>
-      </ul>
-    </slick>
   </div>
-</div>
