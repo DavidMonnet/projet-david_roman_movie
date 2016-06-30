@@ -19,5 +19,16 @@
         </li>
       </ul>
     </div>
+
+
+
+    <slick dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+      <ul>
+        <li id="searchTextResult" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
+          <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
+        <poster movie="el"></poster></a>
+        </li>
+      </ul>
+    </slick>
   </div>
 </div>

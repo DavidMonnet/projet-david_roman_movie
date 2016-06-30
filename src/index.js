@@ -1,2 +1,2 @@
 angular
-  .module('app', ['ui.router', 'ngFlag']);
+  .module('app', ['ui.router', 'ngFlag', 'slick']);
