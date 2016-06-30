@@ -4,9 +4,14 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.3.1",
-    "bootstrap": "3.3.4"
+    "bootstrap": "3.3.4",
+    "ng-flags": "master",
+    "world-flags-sprite": "*"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0"
+  },
+  "resolutions": {
+    "angular": "1.5.7"
   }
 }
