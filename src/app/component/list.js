@@ -8,6 +8,10 @@ angular
         .then(function (result) {
           $ctrl.movies = result.data.results;
         });
+      $http.get('https://amc.ig.he-arc.ch/tmdb/movie/latest?language=fr')
+        .then(function (result) {
+          $ctrl.moviesrecents = result.data.results;
+        });
       $ctrl.maListe = Persistence.importSaved();
       $ctrl.ajouterAListe = function (el) {
         $ctrl.maListe.push(el);
