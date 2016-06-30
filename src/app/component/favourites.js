@@ -7,11 +7,5 @@ angular
 
       $ctrl.maListe = [];
       $ctrl.maListe = Save.importSaved();
-
-      $ctrl.supprimerdeListe = function (el) {
-        $ctrl.maListe.splice($ctrl.maListe.indexOf(el), 1);
-        Save.save($ctrl.maListe);
-      };
     }
   });
-
