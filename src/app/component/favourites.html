@@ -1,12 +1,11 @@
 <div class="row jumbotron form-group">
   <label>Recherche: <input ng-model="$ctrl.searchText"></label>
 </div>
-<h2>HELLO</h2>
 <div class="row">
   <div class="col-md-6"> 
     <div ng-init="$ctrl.movies"></div>  
     <ul> 
-      <li id="searchTextResult" ng-repeat="el in $ctrl.movies |filter:$ctrl.searchText track by $index ">
+      <li id="searchTextResult" ng-repeat="el in $ctrl.maListe |filter:$ctrl.searchText track by $index ">
          <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
         <poster movie="el"></poster></a>
       </li>
