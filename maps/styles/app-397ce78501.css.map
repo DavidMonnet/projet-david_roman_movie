@@ -1,1 +1,0 @@
-{"version":3,"sources":["/source/index.css"],"names":[],"mappings":"AAAA,KACE,wBAA4B,CAC7B,AAED,iBACI,SAAW,CACZ","file":"styles/app-397ce78501.css","sourcesContent":["body {\n  background-color: lightgrey;\n}\n\n.glyphicon-heart {\n    color: red;\n  }"],"sourceRoot":"/source/"}
