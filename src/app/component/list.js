@@ -13,5 +13,13 @@ angular
         $ctrl.maListe.push(el);
         Persistence.save($ctrl.maListe);
       };
+      $ctrl.movieDansListe = function (testMovie) {
+        for (var i = 0, l = $ctrl.maListe.length; i < l; ++i) {
+          if ($ctrl.maListe[i].id === testMovie) {
+            return true;
+          }
+        }
+        return false;
+      };
     }
   });

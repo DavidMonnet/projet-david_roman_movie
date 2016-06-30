@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row jumbotron form-group">
     <div>
-      <!-- A completer -->
       <label>Recherche: <input ng-model="$ctrl.searchText"></label>
     </div>
   </div>
@@ -13,14 +12,17 @@
         <a ui-sref="app.movie({movieId:el.id})"> {{el.title}}
             <poster movie="el"></poster>
           </a>
-        <button ng-click="$ctrl.ajouterAListe(el)" class="btn btn-icon">
+        <button ng-hide="$ctrl.movieDansListe(el.id)" ng-click="$ctrl.ajouterAListe(el)" class="btn btn-icon">
             <span class="glyphicon glyphicon-heart" ng-class="{active: item.favorite}"></span>
           </button>
       </li>
     </ul>
     <br />
-    <slick class="col-xs-12" dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
-      <div class="searchTextResult" ng-repeat="el in $ctrl.movies ">
+    <br />
+    <h2> Autres films récemment sortis </h2>
+    <br />
+        <slick class="col-xs-12" dots="true" infinite="false" speed="300" slides-to-show="5" touch-move="false" slides-to-scroll="1">
+      <div ng-repeat="el in $ctrl.movies ">
         <a ui-sref="app.movie({movieId:el.id})">
           <poster movie="el"></poster>
         </a>
